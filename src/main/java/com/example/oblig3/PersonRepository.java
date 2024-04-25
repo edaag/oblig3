@@ -26,7 +26,7 @@ public class PersonRepository {
 
         // Oppdaterer databasen ved å bruke JDBC-template og setter inn de gitte verdiene
         db.update(sql, innPerson.getFilm(), innPerson.getAntall(), innPerson.getFornavn(),
-                innPerson.getEtternavn(), innPerson.getTelefonnr(), innPerson.getEpost());
+                innPerson.getEtternavn(), innPerson.getTelefonnr(), innPerson.getEpost() );
     }
 
 

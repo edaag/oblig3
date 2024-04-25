@@ -141,7 +141,7 @@ function visBilletter(billetter){
 //funksjonen hentAlleBilletter() blir definert for å hente alle billetter fra serveren.
 function hentAlleBilletter(){
     //En HTTP GET-forespørsel blir sendt til "/hentAlleBilletter" URL-en for å hente dataene fra serveren.
-    $.get("/hentAlleBilletter", function (data){
+    $.get("/hentAlle", function (data){
 
         //Dataene som er mottatt fra serveren, blir logget til konsollen.
         console.log("data mottatt fra server:", data);
@@ -158,7 +158,7 @@ function slettAlleBilletter(){
     En HTTP GET-forespørsel blir sendt til "/slettAlle"
     URL-en for å slette alle billetter fra serveren.
      */
-    $.get("/slettAlleBilletter", function (){
+    $.get("/slettAlle", function (){
 
         //En melding blir skrevet til konsollen for å indikere at alle data er slettet fra serveren.
         console.log("Alt data har blitt slettet fra server.");
