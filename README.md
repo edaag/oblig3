@@ -6,3 +6,7 @@ de 5 inout boksene: antall, fornavn, etternavn, telefonnr og epost.
 Gjennomfører inputvalideringer for å sjekke om inputene er gyldige datatyper.
 Applikasjonen styles med Bootstrap. Lagrer inputene i en tabell i relasjonsdatabasen.
 Listen med innlagte bestillinger sorteres på etternavn og sorteringen skjer på server.
+
+Linken for video- testting av koden:
+På You Tube
+https://youtu.be/7ga4MmTTruE
