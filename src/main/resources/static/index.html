@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Angir tittelen på siden som vises i nettlesertabben -->
+    <title>Kinobillettbestilling</title>
+
+    <!-- Laster inn jQuery-biblioteket fra en ekstern kilde -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Laster inn Bootstrap CSS-filen fra en ekstern kilde -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Laster inn lokal JavaScript-fil "index.js" -->
+    <script src="index.js"></script>
+
+
+    <!-- Bruker css for å definere rød farge for elementer med klassen "feil" -->
+    <style>
+        .feil{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+<!-- Overskrift for billettbestillingssiden -->
+<h1>Bestilling av kinobillett</h1>
+
+<!-- Starter en tabell med Bootstrap CSS-klassen "table" -->
+<table class="table">
+    <!-- Starter en rad i tabellen -->
+    <tr>
+        <!-- Første celle i raden med etikett for filmnavn -->
+        <td><label for="film"> Film: </label></td>
+
+        <!-- Andre celle med en rullegardinliste for valg av film -->
+        <td><select id="film" class="form-control">
+
+            <!-- Standardvalg som er valgt og deaktivert -->
+            <option value="" selected disabled>Velg film</option>
+            <!-- Danner film valg i listen -->
+            <option value="Kung Fu Panda">Kung Fu Panda</option>
+            <option value="Fast & Furious 10">Fast & Furious 10</option>
+            <option value="Shrek 2">Shrek 2</option>
+            <option value="The Conjuring">The Conjuring</option>
+        </select></td>
+        <!-- Tredje celle for feilmeldinger relatert til valg av film -->
+        <td class="feil" id="filmError"></td>
+    </tr>
+
+    <!-- Gjør det samme for radene under også-->
+    <tr>
+        <td><label for="antall">Antall billetter:</label></td>
+        <td><input type="number" class="form-control" id="antall" name="antall" min="1" max="20"></td>
+        <td class="feil" id="antallError"></td>
+    </tr>
+
+    <tr>
+        <td><label for="fornavn">Fornavn:</label></td>
+        <td><input type="text" class="form-control" id="fornavn" name="fornavn"></td>
+        <td class="feil" id="fornavnError"></td>
+    </tr>
+
+    <tr>
+        <td><label for="etternavn">Etternavn:</label></td>
+        <td><input type="text" class="form-control" id="etternavn" name="etternavn"></td>
+        <td class="feil" id="etternavnError"></td>
+    </tr>
+    <tr>
+        <td><label for="tlf">Telefonnummer:</label></td>
+        <td><div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">+47</span>
+        <input type="number" class="form-control" id="tlf" name="tlf" min="1"></div></td>
+        <td class="feil" id="tlfError"></td>
+    </tr>
+
+    <tr>
+        <td> <label for="epost">Epost:</label></td>
+        <td><input type="email" class="form-control" id="epost" name="epost" placeholder="name@example.com"></td>
+        <td class="feil" id="epostError"></td>
+    </tr>
+
+</table> <!-- Avslutter tabellen -->
+<br>
+<!-- Knapp for å lagre billetten -->
+<button class="btn btn-primary" onclick="lagreAlleBillett()">Kjop billett</button><br>
+
+<!-- Overskrift for visning av alle billetter -->
+<h2>Alle billetter</h2>
+
+<!-- Tabell for å vise alle billettene -->
+<table class="table table-striped" id="billetter"></table>
+
+<!-- Knapp for å slette alle billetter -->
+<button class="btn btn-danger" onclick="slettAlleBilletter()">Slett alle billetter</button>
+
+
+</body>
+</html>
